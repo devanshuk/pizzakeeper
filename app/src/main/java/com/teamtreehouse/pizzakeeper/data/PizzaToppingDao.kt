@@ -7,9 +7,6 @@ import android.arch.persistence.room.Query
 @Dao
 interface PizzaToppingDao {
 
-    @Insert
-    fun addTopping(pizzaId : Int, toppingId : Int)
-
     @Query("select toppingId from pizzatopping where pizzaId = :id")
     fun getToppingIdsForPizzaId(id : Int) : List<Int>
 
